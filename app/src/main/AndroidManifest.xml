@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".activities.LoginActivity" android:exported="false">
             <intent-filter>
                 <action android:name="oversecured.ovaa.action.LOGIN" />
                 <category android:name="android.intent.category.DEFAULT" />
