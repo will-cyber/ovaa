@@ -65,9 +65,10 @@ public class DeeplinkActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Intent newdata = new Intent();
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == -1 && requestCode == URI_GRANT_CODE) {
-            setResult(resultCode, data);
+            setResult(resultCode, newdata);
         }
     }
 }
