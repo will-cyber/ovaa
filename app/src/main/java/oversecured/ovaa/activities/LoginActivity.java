@@ -75,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onLoginFinished() {
         Intent redirectIntent = getIntent().getParcelableExtra(INTENT_REDIRECT_KEY);
-        if(redirectIntent != null) 
+        ComponentName destinationComponent = redirectIntent.resolveActivity(getPackageManager());
+        if(redirectIntent != null && destinationComponent.getPackageName().equals("safe.package") && destinationComponent.getClassName().equals("SafeClass")) 
         {
             startActivity(redirectIntent);
         }
