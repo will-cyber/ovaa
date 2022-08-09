@@ -67,6 +67,7 @@ public class DeeplinkActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == -1 && requestCode == URI_GRANT_CODE) {
+            data.removeFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
             setResult(resultCode, data);
         }
     }
